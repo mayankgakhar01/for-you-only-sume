@@ -1,0 +1,154 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+<meta charset="UTF-8">  
+<title>For My Nonnu 🤍</title>  
+  
+<style>  
+body {  
+    background: linear-gradient(to right, #ffdde1, #ee9ca7);  
+    font-family: Arial, sans-serif;  
+    text-align: center;  
+    padding: 20px;  
+}  
+  
+.card {  
+    background: white;  
+    border-radius: 25px;  
+    padding: 30px;  
+    max-width: 400px;  
+    margin: auto;  
+    box-shadow: 0px 0px 25px pink;  
+}  
+  
+h1, h2 {  
+    color: #ff4b7d;  
+}  
+  
+button {  
+    background: #ff4b7d;  
+    color: white;  
+    border: none;  
+    padding: 12px 25px;  
+    border-radius: 25px;  
+    font-size: 16px;  
+    cursor: pointer;  
+    margin: 10px;  
+}  
+  
+button:hover {  
+    background: #ff1e5a;  
+}  
+  
+/* Popup */  
+.popup {  
+    display: none;  
+    position: fixed;  
+    top: 0;  
+    left: 0;  
+    width: 100%;  
+    height: 100%;  
+    background: rgba(0,0,0,0.6);  
+}  
+  
+.popup-content {  
+    background: white;  
+    border-radius: 20px;  
+    padding: 30px;  
+    max-width: 350px;  
+    margin: 150px auto;  
+    box-shadow: 0px 0px 20px hotpink;  
+}  
+  
+.option-btn {  
+    display: block;  
+    width: 80%;  
+    margin: 10px auto;  
+}  
+  
+.hurray {  
+    font-size: 26px;  
+    color: #ff1e5a;  
+    display: none;  
+}  
+  
+.kisses {  
+    font-size: 18px;  
+    color: #ff4b7d;  
+    display: none;  
+}  
+  
+.reveal {  
+    font-size: 20px;  
+    color: #333;  
+    margin-top: 15px;  
+    display: none;  
+}  
+  
+.final-page {  
+    display: none;  
+}  
+</style>  
+</head>  
+  
+<body>  
+  
+<!-- FIRST PAGE -->  
+<div class="card" id="firstPage">  
+    <h1>Hey My Nonnu 🤍</h1>  
+    <p>Will you be my Valentine? 💌</p>  
+  
+    <button onclick="openPopup()">YES 💕</button>  
+    <button onclick="noClicked()">NO 😢</button>  
+</div>  
+  
+<!-- POPUP -->  
+<div class="popup" id="popup">  
+    <div class="popup-content">  
+        <h2>Choose from any 3 options 💝</h2>  
+  
+        <button class="option-btn" onclick="selectOption('Bouquet 💐')">Option 1</button>  
+        <button class="option-btn" onclick="selectOption('Beautiful Ambience Lunch 🍽️')">Option 2</button>  
+        <button class="option-btn" onclick="selectOption('Movie Date With Me 🎬')">Option 3</button>  
+    </div>  
+</div>  
+  
+<!-- FINAL PAGE -->  
+<div class="card final-page" id="finalPage">  
+    <div class="reveal" id="revealText"></div>  
+  
+    <div class="hurray" id="hurray">HURRAYYYYY 🎉💖</div>  
+    <div class="kisses" id="kisses">  
+        INFINITE KISSES FROM MAYU 😘😘😘😘😘😘😘😘😘😘😘😘😘😘😘  
+    </div>  
+  
+    <h1 style="margin-top:20px;">  
+        I love you the most my Nonnu 🤍🫂  
+    </h1>  
+</div>  
+  
+<script>  
+function openPopup() {  
+    document.getElementById("popup").style.display = "block";  
+}  
+  
+function noClicked() {  
+    alert("Nonnu 😢 NO is not allowed for Mayu 🤍 Try again 💕");  
+}  
+  
+function selectOption(choice) {  
+    document.getElementById("popup").style.display = "none";  
+    document.getElementById("firstPage").style.display = "none";  
+    document.getElementById("finalPage").style.display = "block";  
+  
+    var reveal = document.getElementById("revealText");  
+    reveal.style.display = "block";  
+    reveal.innerHTML = "You unlocked this surprise for us 🤍: <b>" + choice + "</b>";  
+  
+    document.getElementById("hurray").style.display = "block";  
+    document.getElementById("kisses").style.display = "block";  
+}  
+</script>  
+  
+</body>  
+</html>  
